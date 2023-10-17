@@ -15,8 +15,8 @@
 > static
 </font>
 
-# Day3 
-## 3.1Flask-SQLAlchemy [连接数据库](https://www.bilibili.com/video/BV17r4y1y7jJ?p=14&vd_source=33207922e975d5ad1770261da92cead1)
+# [Day3 ](https://www.bilibili.com/video/BV17r4y1y7jJ?p=14&vd_source=33207922e975d5ad1770261da92cead1)
+## 3.1Flask-SQLAlchemy 连接数据库
 * <font size =3 >连接数据库
 ```python
 from flask import Flask, render_template
