@@ -21,7 +21,7 @@
 * <font size = 3>__一个ORM模型对应一个数据表__
 * ORM模型的属性对应表内的每个字段</font>
 <font size = 3>
-~~~
+```
 class User(db.Model):
     ## 数据库的表名
     __tablename__ = "user"
@@ -33,7 +33,7 @@ class User(db.Model):
 
 with app.app_context():
     db.create_all()
-~~~  
+```
  </font>
 
 ## 3.3 使用ORM模型增查改删  
