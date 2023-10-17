@@ -12,7 +12,6 @@ PASSWORD = "lkl",
 DATABASE = "flask_learn"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:lkl@127.0.0.1:3306/flask_learn?charset=utf8"
-
 db = SQLAlchemy(app)
 
 # with app.app_context():
