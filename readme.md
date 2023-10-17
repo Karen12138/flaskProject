@@ -17,10 +17,35 @@
 
 # Day3 
 ## 3.1Flask-SQLAlchemy [连接数据库](https://www.bilibili.com/video/BV17r4y1y7jJ?p=14&vd_source=33207922e975d5ad1770261da92cead1)
-## 3.2 ORM模型
-* <font size = 3>__一个ORM模型对应一个数据表__
-* ORM模型的属性对应表内的每个字段
+* <font size =3 >连接数据库
+```python
+from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import text
+
+app = Flask(__name__)
+
+HOSTNAME = "127.0.0.1",
+PORT = 3306
+USERNAME = "root",
+PASSWORD = "lkl",
+DATABASE = "flask_learn"
+
+### 设置本机数据库信息
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:lkl@127.0.0.1:3306/flask_learn?charset=utf8"
+db = SQLAlchemy(app)
+
+with app.app_context():
+    with db.engine.connect() as conn:
+        rs = conn.execute(text("select 1"))
+        print(rs.fetchone())
 ```
+ </font>
+
+## 3.2 ORM模型
+* <font size = 3>一个ORM模型对应一个数据表
+* ORM模型的属性对应表内的每个字段
+```python
 class User(db.Model):
     ## 数据库的表名
     __tablename__ = "user"
@@ -38,7 +63,7 @@ with app.app_context():
 ## 3.3 使用ORM模型增查改删  
 
 * <font size = 3>创建数据
-```
+```python
 @app.route('/user/add')
 def user_add():
     ## 创建实例对象
@@ -53,7 +78,7 @@ def user_add():
 ```
  
 * 查询数据
-```
+```python
 @app.route('/user/query')
 def user_query():
     ### 提取方法：获取主键查询（主键是能确定一条记录的唯一标识）
@@ -67,7 +92,7 @@ def user_query():
 ```
 
 * 更新数据
-```
+```python
 @app.route('/user/update')
 def user_update():
     ### first()获取到的是当前username下的整个数据
@@ -81,7 +106,7 @@ def user_update():
 ```
 
 * 删除数据
- ```
+ ```python
  @app.route("/user/delete")
 def user_delete():
     user = User.query.filter_by(username="lkl2").first()
@@ -91,3 +116,5 @@ def user_delete():
     return "数据删除成功"
  ```
  </font>
+
+## 3.4 表关系
