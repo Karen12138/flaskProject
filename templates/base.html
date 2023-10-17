@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for("static" , filename = "css1.css") }}" >
+    <script src= "{{ url_for("static", filename = "js1.js") }}">这是干什么用的</script>
+</head>
+<body>
+<ul>
+    <li><a href = "www.baidu.com">百度</a> </li>
+    <li><a href = "www.tencent.com">腾讯</a> </li>
+    <li><a href = "www.alibaba.com">{% block name %}{% endblock %}</a> </li>
+</ul>
+{% block body %}
+{% endblock %}
+</body>
+</html>
