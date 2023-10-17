@@ -38,7 +38,7 @@ with app.app_context():
 
 ## 3.3 使用ORM模型增查改删  
 
-* <font size = 3>创建数据
+* 创建数据
 ~~~
 @app.route('/user/add')
 def user_add():
@@ -89,4 +89,3 @@ def user_delete():
     db.session.commit()
     return "数据删除成功"
  ```
- </font>
