@@ -19,8 +19,7 @@
 ## 3.1Flask-SQLAlchemy [连接数据库](https://www.bilibili.com/video/BV17r4y1y7jJ?p=14&vd_source=33207922e975d5ad1770261da92cead1)
 ## 3.2 ORM模型
 * <font size = 3>__一个ORM模型对应一个数据表__
-* ORM模型的属性对应表内的每个字段</font>
-<font size = 3>
+* ORM模型的属性对应表内的每个字段
 ```
 class User(db.Model):
     ## 数据库的表名
