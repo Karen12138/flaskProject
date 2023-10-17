@@ -1,18 +1,20 @@
 # Day2
 ## Jinja2模板
-1. <font size = 3>渲染模板 
-> render_template()
-2. 模板传参 
-> {{  }}
-3. 过滤器(对变量进行函数操作) 
-> {{name|length}}、app.templates.filter("过滤器名")
-4. 控制语句
->{% %} 结束语句：{% endif %}、{% endfor %}
+1. <font size = 3>渲染模板  
+```render_template()```
+2. 模板传参    
+```{{  }}```
+3. 过滤器(对变量进行函数操作)   
+```{{name|length}}、app.templates.filter("过滤器名")```
+4. 控制语句   
+```{% %} 结束语句：{% endif %}、{% endfor %}```
 5. 模板继承 
-* 父模板{% block head %} {% endblock%}  
-* 子模版{% extends "base.html" %} 、{% block head %} ... {% endblock%}
-6. 加载静态文件 
-> static
+>* 父模板  
+   > ```{% block head %} {% endblock%}```  
+>* 子模版   
+   > ```{% extends "base.html" %} 、{% block head %} ... {% endblock%}```
+6. 加载静态文件   
+```static```
 </font>
 
 # [Day3 ](https://www.bilibili.com/video/BV17r4y1y7jJ?p=14&vd_source=33207922e975d5ad1770261da92cead1)
