@@ -38,8 +38,8 @@ with app.app_context():
 
 ## 3.3 使用ORM模型增查改删  
 
-* 创建数据
-~~~
+* <font size = 3>创建数据
+```
 @app.route('/user/add')
 def user_add():
     ## 创建实例对象
@@ -51,10 +51,10 @@ def user_add():
     ## 同步到数据库中
     db.session.commit()
     return "用户添加成功"
-~~~
+```
  
 * 查询数据
-~~~
+```
 @app.route('/user/query')
 def user_query():
     ### 提取方法：获取主键查询（主键是能确定一条记录的唯一标识）
@@ -65,7 +65,8 @@ def user_query():
     for user in users:
         print( f"{user.username}:{user.password}")
     return "用户查询成功"
-~~~
+```
+
 * 更新数据
 ```
 @app.route('/user/update')
@@ -79,6 +80,7 @@ def user_update():
     print((user.password))
     return "数据更新成功"
 ```
+
 * 删除数据
  ```
  @app.route("/user/delete")
@@ -89,3 +91,4 @@ def user_delete():
     db.session.commit()
     return "数据删除成功"
  ```
+ </font>
