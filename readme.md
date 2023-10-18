@@ -272,5 +272,31 @@ class UserExtension(db.Model):
 ```
  </font>  
 
+# Day4 ORM模型迁移
 
+## 准备：创建迁移对象<font size = 3>
+```python
+## 1. 创建迁移对象
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:lkl@127.0.0.1:3306/flask_learn?charset=utf8"
+
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+```
+ </font>
+
+## ORM模型映射到表的三步
+### 模型映射三步曲 <font size = 3>   
+2.1 初始化迁移环境，这部只需要执行一次即可    
+```flask db init```  
+2.2 识别ORM模型的变化，生成迁移脚本   
+```flask db migrate -m "备注信息" (多人开发建议加上)```  
+2.3 执行迁移脚本,同步到数据库   
+```flask db upgrade```
+</font>
+
+# Day5 Flask实战
