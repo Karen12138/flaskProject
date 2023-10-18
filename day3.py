@@ -83,7 +83,6 @@ def user_delete():
     db.session.commit()
     return "数据删除成功"
 
-# 2023/10/17 今天学的是外键与表关系
 
 if __name__ == '__main__':
     app.run(debug=True)
