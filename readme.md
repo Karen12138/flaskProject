@@ -300,3 +300,41 @@ migrate = Migrate(app, db)
 </font>
 
 # Day5 Flask实战
+## 1. 结构搭建
+### 创建文件与蓝图文件夹
++ <font size = 3>app.py : 主文件
++ config.py ： 配置信息如：token、cookie等
++ exts.py ： 扩展插件，如：SQLAlchemy数据库
++ models.py : 创建的ORM模型都存放在该文件下
+```python 
+# app.py里引用顺序 
+from flask import Flask, render_template
+import config # 引用配置文件
+from exts import db # 引用拓展文件
+# 引用蓝图文件(注意变量名不能重复)
+from blueprints.q_a import bp as qa_bp
+from blueprints.user import bp as user_bp 
+```
+
+```python
+app = Flask(__name__)
+## 1. 绑定配置文件
+app.config.from_object(config)
+
+## 2. 先创建db，到后面再绑定到app
+db.init_app(app)
+
+## 3. 将蓝图引用到app里面
+app.register_blueprint(qa_bp)
+app.register_blueprint(user_bp)
+```
+ </font>
+
+### 创建蓝图文件夹<font size = 3>
++ 创建blueprints的python文件夹  
+> + 该文件夹下__ini__.py 自动生成  
+> + q_a.py 存放有关问答相关的视图函数
+> + user.py 存放用户界面的视图函数
+</font>
+### 各类文件的引用规则如下图
+### ![初始化](D:\PyCharm 2021.3.3\project_backup\day5.png)
