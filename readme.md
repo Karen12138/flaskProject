@@ -291,7 +291,7 @@ migrate = Migrate(app, db)
 
 ## ORM模型映射到表的三步
 ### 模型映射三步曲 <font size = 3>   
-2.1 初始化迁移环境，这部只需要执行一次即可    
+2.1 初始化迁移环境，这步只需要执行一次即可    
 ```flask db init```  
 2.2 识别ORM模型的变化，生成迁移脚本   
 ```flask db migrate -m "备注信息" (多人开发建议加上)```  
@@ -303,7 +303,7 @@ migrate = Migrate(app, db)
 ## 1. 结构搭建
 ### 创建文件与蓝图文件夹
 + <font size = 3>app.py : 主文件
-+ config.py ： 配置信息如：token、cookie等
++ config.py ： 配置信息如：数据库配置信息、token、cookie等
 + exts.py ： 扩展插件，如：SQLAlchemy数据库
 + models.py : 创建的ORM模型都存放在该文件下
 ```python 
