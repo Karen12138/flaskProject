@@ -337,4 +337,4 @@ app.register_blueprint(user_bp)
 > + user.py 存放用户界面的视图函数
 </font>
 ### 各类文件的引用规则如下图
-### ![初始化](D:\PyCharm 2021.3.3\project_backup\day5.png)
+### ![初始化](D:\PyCharm 2021.3.3\project_backup\flaskProject\static\day5.png)
